@@ -16,20 +16,23 @@ interface HintProps {
 export const Hint = ({
     label,
     children,
-    asChild,
-    side,
-    align,
+    asChild = false,
+    side = "top",
+    align = "center",
 }: HintProps) => {
-    return(
+    return (
         <TooltipProvider>
             <Tooltip delayDuration={0}>
                 <TooltipTrigger asChild={asChild}>
                     {children}
                 </TooltipTrigger>
-                <TooltipContent 
-                 className="rounded-md p-2 bg-white text-black shadow-lg"
-                 side={side}
-                 align={align}
+                <TooltipContent
+                    className="rounded-md p-2 bg-white text-black shadow-lg z-[50]" // High z-index for overlay
+                    side={side}
+                    align={align}
+                    style={{
+                        zIndex: 50, // Ensures tooltip is above sidebar and other elements
+                    }}
                 >
                     <p className="font-semibold">
                         {label}
@@ -37,5 +40,5 @@ export const Hint = ({
                 </TooltipContent>
             </Tooltip>
         </TooltipProvider>
-    )
-}
+    );
+};
