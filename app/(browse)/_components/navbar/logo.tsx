@@ -29,7 +29,7 @@ export const Logo = () => {
             StreamHive
           </p>
           <p className="text-xs text-muted-foreground">
-            Let's Stream
+            Let&apos;s Stream
           </p>
         </div>
       </div>

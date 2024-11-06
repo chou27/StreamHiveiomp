@@ -21,7 +21,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 //   weight: "100 900",
 // });
 
-const inter= Inter({subsets: ['latin']})
+
 
 export const metadata: Metadata = {
   title: "Create Next App",

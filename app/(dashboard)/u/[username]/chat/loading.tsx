@@ -1,6 +1,6 @@
 import { Skeleton } from "@/components/ui/skeleton";
 
-import { ToggleCard, ToggleCardSkeleton } from "./_components/toggle-card";
+import { ToggleCardSkeleton } from "./_components/toggle-card";
 
 
 

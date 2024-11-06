@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeftFromLine, ArrowRightFromLine, MessageSquare, Users } from "lucide-react";
+import { MessageSquare, Users } from "lucide-react";
 
 import { Hint } from "@/components/hint";
 import { Button } from "@/components/ui/button";

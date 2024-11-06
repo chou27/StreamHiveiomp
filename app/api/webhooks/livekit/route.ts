@@ -1,5 +1,5 @@
 import { headers } from "next/headers";
-import { authorizeHeader, WebhookReceiver } from "livekit-server-sdk";
+import { WebhookReceiver } from "livekit-server-sdk";
 
 import { db } from "@/lib/db";
 
