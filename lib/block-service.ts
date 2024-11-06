@@ -1,6 +1,6 @@
 import { db } from "@/lib/db";
 import { getSelf } from "@/lib/auth-service";
-import { tree } from "next/dist/build/templates/app-page";
+
 
 export const isBlockedByUser = async (id: string) => {
     try{
@@ -114,4 +114,19 @@ export const unblockUser = async (id: string) => {
     });
 
     return unblock;
+};
+
+export const getBlockedUsers = async() => {
+    const self =await getSelf();
+
+    const blockedUsers = await db.block.findMany({
+        where: {
+            blockerId: self.id,
+        },
+        include: {
+            blocked: true,
+        },
+    });
+
+    return blockedUsers;
 };

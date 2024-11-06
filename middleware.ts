@@ -31,6 +31,8 @@ const isPublicRoute = createRouteMatcher([
   '/api/webhooks(.*)', // Matches webhook API routes
   '/' ,// Matches the root route
   '/api/uploadthing',
+  '/:username',
+  "/search",
 ]);
 
 export default clerkMiddleware(async (auth, request) => {

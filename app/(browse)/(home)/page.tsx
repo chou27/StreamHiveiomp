@@ -1,13 +1,13 @@
+import { Suspense } from "react";
 
-import Image from "next/image";
+import {Results, ResultsSkeleton} from "./_components/results";
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-y-4">
-      <h1>Home page</h1>
-      {/* <UserButton
-        afterSignOutUrl="/"
-      /> */}
+    <div className="h-full p-8 max-w-sxreen-2xl mx-auto">
+      <Suspense fallback={<ResultsSkeleton/>}>
+        <Results />
+      </Suspense>
     </div>
   );
-}
+};
