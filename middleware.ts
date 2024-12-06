@@ -76,6 +76,25 @@
 //   runtime: "experimental-edge",
 // };
 
+// import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
+
+// const publicRoutes = createRouteMatcher([
+//   "/",
+//   "/api/webhooks/clerk",
+//   "/api/webhooks/livekit"
+// ]);
+
+// export default clerkMiddleware(async (auth, req) => {
+//   if (publicRoutes(req)) return null;
+//   await auth.protect();
+//   return null;
+// });
+
+// export const config = {
+//   matcher: ["/((?!.+\\.[\\w]+$|_next).*)", "/", "/(api|trpc)(.*)"],
+//   runtime: "experimental-edge",
+// };
+
 import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
 
 const publicRoutes = createRouteMatcher([
@@ -91,6 +110,5 @@ export default clerkMiddleware(async (auth, req) => {
 });
 
 export const config = {
-  matcher: ["/((?!.+\\.[\\w]+$|_next).*)", "/", "/(api|trpc)(.*)"],
-  runtime: "experimental-edge",
+  matcher: ["/((?!.+\\.[\\w]+$|_next).*)", "/", "/(api|trpc)(.*)"]
 };
